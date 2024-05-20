@@ -1,19 +1,25 @@
 const task = document.getElementById('todo-item');
-var taskList = document.getElementById('task-list');
+const taskList = document.getElementById('task-list');
 
 function clearTasks() {
-    taskList.innerHTML = ''
+    taskList.innerHTML = '';
     localStorage.removeItem('data');
 }
 
 function addTask() {
-
     if (task.value === '') {
-        alert('Cannot Add An Empty Task!')
+        alert('Cannot Add An Empty Task!');
     } else {
-        const newTask = document.createElement('li');
-        newTask.innerHTML = task.value;
-        taskList.append(newTask);
+        const li = document.createElement('li');
+        li.className = 'dark:text-white';
+        li.innerHTML = task.value;
+        
+        const span = document.createElement('span');
+        span.innerHTML = '&times;';
+        li.appendChild(span);
+        
+        taskList.appendChild(li);
+        
         task.value = '';
         saveItem();
     }
@@ -33,14 +39,13 @@ function displayData() {
 displayData();
 
 document.addEventListener('click', function(e) {
-
-    console.log(e.target.tagName);
     if (e.target.tagName === 'LI') {
         e.target.classList.toggle('checked');
     } else if (e.target.tagName === 'SPAN') {
-        e.target.parentElement.removeItem();
+        e.target.parentElement.remove();
+        saveItem();
     }
 });
 
 
-
+console.log(taskList.innerHTML)

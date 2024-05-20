@@ -7,28 +7,24 @@
   <link rel="stylesheet" href="src/output.css">
   <title>Document</title>
 </head>
-<body>
-  <div class="font-sans flex justify-center items-center flex-col my-[2rem]">
-    <h1 class="font-[650] font-sans text-[72px] mb-[1rem]">To-Do List</h1>
-    <div class="rounded-[45px] border-[2px] border-black min-w-[75vh] min-h-[75vh] max-w-[75vh] flex flex-col pt-[1rem] pl-[1rem] pr-[1rem]">
+<body class="dark:bg-black">
+  <div class="flex justify-end p-[2rem] px-[4rem] sticky top-0 dark:bg-black">
+    <img onclick="document.body.classList.toggle('dark')" class="cursor-pointer dark:hidden transition-all w-[2.5rem]" src="images/dark-mode.svg" alt="">
+    <img onclick="document.body.classList.toggle('dark')" class="cursor-pointer hidden dark:block transition-all w-[2.5rem]" src="images/light-mode.svg" alt="">
+  </div>
+
+  <div class="font-sans flex justify-center items-center flex-col pb-[4rem] dark:bg-black">
+    <h1 class="font-[650] font-sans text-[72px] mb-[1rem] dark:text-white transition-all">To-Do List</h1>
+    <div class="rounded-[45px] border-[2px] border-black min-w-[75vh] min-h-[75vh] max-w-[75vh] flex flex-col pt-[1rem] pl-[1rem] pr-[1rem] dark:border-white transition-all">
       <div class="grid grid-cols-3 p-[2rem] gap-[1rem]">
-        <input class="col-start-1 col-end-3 rounded-[45px] border-black border-[1px] px-[1.25rem] py-[0.75rem] font-sans hover:bg-slate-100 transition-all" type="text" name="" id="todo-item" placeholder="Add Task...">
-        <select id="todo-category" class="rounded-[45px] border-black border-[1px] px-[1rem] py-[0.75rem] font-sans hover:bg-slate-100 transition-all cursor-pointer">
-          <option value="" selected disabled>Priority</option>
-          <option value="no-priority">0</option>
-          <option value="low">1</option>
-          <option value="low-med">2</option>
-          <option value="med">3</option>
-          <option value="med-hi">4</option>
-          <option value="hi">5</option>
-        </select>        
-        <button onclick="addTask()" class="col-start-1 col-end-4 bg-orange-colour rounded-[45px] py-[0.75rem] text-white font-bold font-sans hover:bg-blue-colour transition-all">Add</button>
+        <input class="col-start-1 col-end-4 rounded-[45px] border-black border-[1px] px-[1.5rem] py-[0.75rem] font-sans hover:bg-slate-100 transition-all dark:border-white dark:bg-black" type="text" id="todo-item" placeholder="Add Task...">    
+        <button onclick="addTask()" class="col-start-1 col-end-4 bg-orange-colour rounded-[45px] py-[0.75rem] text-white font-bold font-sans hover:bg-blue-colour transition-all dark:bg-blue-colour dark:hover:bg-orange-colour">Add</button>
       </div>
       <div class="flex-grow">
         <ul class="relative" id="task-list">
         </ul>
       </div>
-      <div class="mb-[0.5rem] p-[2rem]"><button onclick="clearTasks()" class="w-[100%] bg-blue-colour rounded-[45px] py-[0.75rem] text-white font-bold font-sans hover:bg-orange-colour transition-all">Clear</button></div>
+      <div class="mb-[0.5rem] p-[2rem]"><button onclick="clearTasks()" class="w-[100%] bg-blue-colour rounded-[45px] py-[0.75rem] text-white font-bold font-sans hover:bg-orange-colour transition-all dark:bg-orange-colour dark:hover:bg-blue-colour">Clear</button></div>
     </div>
   </div>
   <script src="script/script.js"></script>

@@ -1,7 +1,7 @@
 // tailwind.config.js
 module.exports = {
   content: ['./*.html', './scripts/*.js'],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: {
