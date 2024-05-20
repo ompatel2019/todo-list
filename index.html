@@ -1,34 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/output.css">
-  <title>Document</title>
-</head>
-<body class="dark:bg-black">
-  <div class="flex justify-center p-[2rem] px-[4rem] dark:bg-black">
-    <img onclick="document.body.classList.toggle('dark')" class="cursor-pointer dark:hidden transition-all w-[2.5rem]" src="images/dark-mode.svg" alt="">
-    <img onclick="document.body.classList.toggle('dark')" class="cursor-pointer hidden dark:block transition-all w-[2.5rem]" src="images/light-mode.svg" alt="">
-  </div>
-
-  <div class="font-sans flex justify-center items-center flex-col pb-[4rem] dark:bg-black">
-    <h1 class="font-[650] font-sans text-[72px] mb-[1rem] dark:text-white transition-all max-sm:text-[48px]">To-Do List</h1>
-    <div class="rounded-[45px] border-[2px] border-black sm:min-w-[75vh] max-sm:w-[50vh]  min-h-[75vh] max-w-[75vh] flex flex-col pt-[1rem] pl-[1rem] pr-[1rem] dark:border-white transition-all">
-      <div class="grid grid-cols-3 p-[2rem] gap-[1rem]">
-        <input class="col-start-1 col-end-4 rounded-[45px] border-black border-[1px] px-[1.5rem] py-[0.75rem] font-sans hover:bg-slate-100 transition-all dark:border-white dark:bg-black dark:text-white" type="text" id="todo-item" placeholder="Add Task...">    
-        <button onclick="addTask()" class="col-start-1 col-end-4 bg-orange-colour rounded-[45px] py-[0.75rem] text-white font-bold font-sans hover:bg-blue-colour transition-all dark:bg-blue-colour dark:hover:bg-orange-colour">Add</button>
-      </div>
-      <div class="flex-grow">
-        <ul class="relative" id="task-list">
-        </ul>
-      </div>
-      <div class="mb-[0.5rem] p-[2rem]"><button onclick="clearTasks()" class="w-[100%] bg-blue-colour rounded-[45px] py-[0.75rem] text-white font-bold font-sans hover:bg-orange-colour transition-all dark:bg-orange-colour dark:hover:bg-blue-colour">Clear</button></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/output.css" />
+    <title>To-Do List App | Sort Yourself</title>
+  </head>
+  <body class="dark:bg-black">
+    <div class="flex justify-center p-[2rem] px-[4rem] dark:bg-black">
+      <img onclick="document.body.classList.toggle('dark')" class="w-[2.5rem] cursor-pointer transition-all dark:hidden" src="images/dark-mode.svg" alt="" />
+      <img onclick="document.body.classList.toggle('dark')" class="hidden w-[2.5rem] cursor-pointer transition-all dark:block" src="images/light-mode.svg" alt="" />
     </div>
-  </div>
 
+    <div class="flex flex-col items-center justify-center pb-[4rem] font-sans dark:bg-black">
+      <h1 class="mb-[1rem] font-sans text-[72px] font-[650] transition-all max-sm:text-[48px] dark:text-white">To-Do List</h1>
+      <div class="flex min-h-[75vh] max-w-[75vh] flex-col rounded-[45px] border-[2px] border-black pl-[1rem] pr-[1rem] pt-[1rem] transition-all max-sm:w-[50vh] sm:min-w-[75vh] dark:border-white">
+        <div class="grid grid-cols-3 gap-[1rem] p-[2rem]">
+          <input class="col-start-1 col-end-4 rounded-[45px] border-[1px] border-black px-[1.5rem] py-[0.75rem] font-sans transition-all hover:bg-slate-100 dark:border-white dark:bg-black dark:text-white" type="text" id="todo-item" placeholder="Add Task..." />
+          <button onclick="addTask()" class="bg-orange-colour hover:bg-blue-colour dark:bg-blue-colour dark:hover:bg-orange-colour col-start-1 col-end-4 rounded-[45px] py-[0.75rem] font-sans font-bold text-white transition-all">Add</button>
+        </div>
+        <div class="flex-grow">
+          <ul class="relative" id="task-list"></ul>
+        </div>
+        <div class="mb-[0.5rem] p-[2rem]"><button onclick="clearTasks()" class="bg-blue-colour hover:bg-orange-colour dark:bg-orange-colour dark:hover:bg-blue-colour w-[100%] rounded-[45px] py-[0.75rem] font-sans font-bold text-white transition-all">Clear</button></div>
+      </div>
+    </div>
 
-  <script src="script/script.js"></script>
-</body>
+    <script src="script/script.js"></script>
+  </body>
 </html>
