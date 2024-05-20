@@ -22,6 +22,7 @@ ul li::before {
 }
 ul li {
     margin-left: 5.5rem;
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 
